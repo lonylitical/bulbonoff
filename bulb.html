@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charBet="UTF-8">
-        <meta name="viewport" content="width=device-width" initial-Bcale="1.0">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" initial-scale="1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">9
         <title>bulb operation</title>
         <link rel="stylesheet" href="bulb.css">
+
+<style>
+
+    body
+    { 
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffd0a8;
+        color:#333;
+        font-family: sans-serif;
+        font-weight: 100;
+        text-transform: capitalize;
+        border: 5px solid black;
+    }
+    .container
+    {
+     text-align: center;
+     padding: 2rem;
+     border-radius: 5px ;
+     background-color: #fff;
+     flex: 0 0 0;
+     }
+    #btnn:hover
+    {
+        color: #ffd000;
+    }
+    </style>
     </head>
     <body>
         <div class="container">
@@ -14,9 +43,29 @@
             <img id="offbulb" src="bulboff.jpeg" height:50px width:50px alt="can't reload" >
             <hr>
             <div>
-                <button id="btnn"  class="btn-btn-primary" onclick="switchit()"><b>press</b></button>
+                <button id="btnn"  class="btn-btn-primary" onclick="switchit()"><b>On</b></button>
             </div>
         </div>
      <script src="bulb.js"></script>
     </body>
 </html>
+
+<script>
+window.i=0;
+function switchit()
+{
+    var takeimage=document.getElementById('offbulb');
+    var textt=document.getElementById('btnn');
+    if(window.i %2==0)
+    {
+        takeimage.src="bulbon.jpeg";
+        textt.innerHTML="off";
+    }
+    else
+    {
+        takeimage.src="bulboff.jpeg";
+        textt.innerHTML="on";
+    }
+    window.i++;
+}
+</script>
